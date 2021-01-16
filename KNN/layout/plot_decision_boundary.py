@@ -5,7 +5,6 @@ from matplotlib.colors import ListedColormap
 import matplotlib
 import matplotlib.patches as mpatches
 import numpy as np
-import tkinter
 
 
 #------------------- Functions
