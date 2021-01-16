@@ -14,7 +14,7 @@ import matplotlib.patches as mpatches
 import numpy as np
 import random
 import streamlit as st
-import tkinter
+
 
 
 #----------------- Layout
