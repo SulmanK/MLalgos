@@ -34,7 +34,7 @@ In short, we find the k closest such data points across the whole training data 
 ''')
 
 # Image of KNN
-image = Image.open('assets/KNN_diagram.png')
+image = Image.open('KNN_diagram.png')
 st.image(image, caption='How K-NN works',
          use_column_width=True)
 
