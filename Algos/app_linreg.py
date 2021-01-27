@@ -368,13 +368,11 @@ def app():
             normal_regularization = st.radio(label='Regularization', key='normal_regularization',
                                              options=[None,  'L2 (Ridge)'])
 
-                if normal_regularization != None:
-                    
-
-                    normal_lambda_ = st.slider(
-                        'Penalty coefficient', key='Normal_lambda',
-                        min_value=0.0, max_value=10.0,
-                        value=0.0, step=0.01)
+            if normal_regularization != None:
+                normal_lambda_ = st.slider(
+                    'Penalty coefficient', key='Normal_lambda',
+                    min_value=0.0, max_value=10.0,
+                    value=0.0, step=0.01)
 
             st.markdown('''
                 # Stochastic Gradient Descent (SGD)
