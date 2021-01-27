@@ -303,7 +303,7 @@ def app():
                 value=0.0, step=0.01)
 
             sk_iterations = st.slider(
-                'iterations', key='bgd_iterations',
+                'Iterations', key='sk_iterations',
                 min_value=0, max_value=3000,
                 value=1500, step=1)
 
@@ -318,7 +318,7 @@ def app():
             value=0.01, step=0.01)
 
         bgd_iterations = st.slider(
-            'iterations', key='bgd_iterations',
+            'Iterations', key='bgd_iterations',
             min_value=0, max_value=3000,
             value=1500, step=1)
 
