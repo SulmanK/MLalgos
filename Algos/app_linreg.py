@@ -22,7 +22,8 @@ def app():
          st.title('Linear Regression')
 
          # Supervised Learning
-         st.markdown(''' ### Supervised Learning
+         st.markdown(''' 
+         ### Supervised Learning
          Firstly, we need to explain supervised learning before we move onto linear regression. 
          Supervised learning involves using input features (x) to predict an output (y). 
          Given a training set, we employ a learning algorithm to get our hypothesis function. 
