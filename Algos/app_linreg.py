@@ -413,14 +413,14 @@ def app():
             r2_sk = r2_score(y_test, y_pred_sk)
 
         elif sk_regularization == 'L1 (Lasso)':
-            reg_sk = Lasso(alpha=sk_lambda_, max_iter=sk_iterations).fit(
+            reg_sk = Lasso(alpha=sk_lambda_,).fit(
                 X_train, y_train)
             y_pred_sk = reg_sk.predict(X_test)
             mse_sk = mean_squared_error(y_test, y_pred_sk)
             r2_sk = r2_score(y_test, y_pred_sk)
 
         elif sk_regularization == 'L2 (Ridge)':
-            reg_sk = Ridge(alpha=sk_lambda_, max_iter=sk_iterations).fit(
+            reg_sk = Ridge(alpha=sk_lambda_).fit(
                 X_train, y_train)
             y_pred_sk = reg_sk.predict(X_test)
             mse_sk = mean_squared_error(y_test, y_pred_sk)
