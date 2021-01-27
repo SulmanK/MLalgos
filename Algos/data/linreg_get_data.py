@@ -17,8 +17,9 @@ col_names = ['vendor_name', 'model_name',
              'PRP', 'ERP']
 
 # Read in dataframe from csv file using col_names list
-df = pd.read_csv('data/machine.data', header=None)
+#df = pd.read_csv('data/machine.data', header=None)
 
+df = pd.read_csv('machine.data', header=None)
 # Subset the X, y df's
 X = df.loc[:, 2:7].values
 
