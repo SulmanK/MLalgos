@@ -1,4 +1,4 @@
-#------------------ Packages
+# ------------------ Packages
 from data.linreg_get_data import X_train, X_test, y_train, y_test
 from layout.plot_predicted_dist import plot_pred_histogram
 from model.linreg import myLinearRegression
@@ -11,9 +11,7 @@ import numpy as np
 import streamlit as st
 
 
-
-
-#----------------- Layout
+# ----------------- Layout
 def app():
 
          # Title
@@ -21,9 +19,9 @@ def app():
 
          # Supervised Learning
          st.markdown(''' ### Supervised Learning
-         Firstly, we need to explain supervised learning before we move onto linear regression. 
-         Supervised learning involves using input features (x) to predict an output (y). 
-         Given a training set, we employ a learning algorithm to get our hypothesis function. 
+         Firstly, we need to explain supervised learning before we move onto linear regression.
+         Supervised learning involves using input features (x) to predict an output (y).
+         Given a training set, we employ a learning algorithm to get our hypothesis function.
          Then, we feed our dataset to our hypothesis function to make predictions.  The process described is presented in Figure 1.
          ''')
 
@@ -34,16 +32,16 @@ def app():
 
          # Linear Regression
          st.markdown('''
-         In supervised learning, when the target variable is continuous, it is called regression, and when it is discrete, it is known as classification. 
+         In supervised learning, when the target variable is continuous, it is called regression, and when it is discrete, it is known as classification.
 
-         ### Linear Regression
-         We need to represent the hypothesis function. 
+         # Linear Regression
+         We need to represent the hypothesis function.
          '''
                      )
          st.markdown(r'''
-             $$ 
+             $$
              h_\theta(x) = \theta_0 + \theta_1x_1 + \theta_2x_2
-             $$ 
+             $$
 
 
              $$
@@ -53,7 +51,7 @@ def app():
              $
              \theta_i
              $
-              's are the parameters and 
+              's are the parameters and
              $
              x_i
              $
@@ -73,7 +71,7 @@ def app():
              Our goal is to minimize our cost function (the sum of our loss function across the training set is minimized).
              We'll be examining two solutions to achieve this, a closed-form solution and various gradient descent methods.
 
-             ### Closed-form Solution (Normal)
+             # Closed-form Solution (Normal)
              Closed-form solution minimizes J by taking its derivatives with respect to
              $
              \theta_j
@@ -84,20 +82,20 @@ def app():
              \theta = (X^TX)^{-1}X^Ty
              $$
 
-             ### Gradient Descent 
+             # Gradient Descent
              Gradient Descent is a search algorithm that starts with an initial guess for
              $
              \theta
              $
-             , it changes 
+             , it changes
              $
              \theta
              $
-             to make 
+             to make
              $
              J(\theta)
-             $ 
-             smaller until it converges to a value of 
+             $
+             smaller until it converges to a value of
              $
              \theta
              $
@@ -119,30 +117,30 @@ def app():
 
          $$
          \theta_j := \theta_j - \alpha \frac{d}{d\theta_j}J(\theta)
-         $$ 
+         $$
 
          $$
          \theta_j := \theta_j - \alpha (y^{(i)} - h_\theta(x^{(i)}))x_j^{(i)}
-         $$ 
+         $$
 
-         The 
+         The
          $
          \alpha
-         $ 
+         $
          parameter is our learning rate, the rate at which our theta updates for convergence.
          We do not want to set it too high or it will never converge to the optimum point and drift towards infinity.
 
          In our case, we'll use three different gradient descent methods: Batch gradient descent, Stochastic gradient descent and Minibatch gradient descent.
 
-         #### Batch Gradient Descent
+         # Batch Gradient Descent
 
          Repeats the update rule above on all training examples on each iteration for a specified number of iterations.
 
-         #### Stochastic Gradient Descent
+         # Stochastic Gradient Descent
 
          Repeats the update rule on a single training example selected at random for the total number of samples in the training set.
 
-         #### Minibatch Gradient Descent
+         # Minibatch Gradient Descent
 
          Compromise between minibatch and stochastic gradient descent.
          Repeats the update rule above on a randomly selected subset of the training samples (minibatch) for a specified number of iterations.
@@ -152,23 +150,23 @@ def app():
          # Metrics
          st.markdown(r'''
 
-         ### Metrics
+         # Metrics
 
-         We'll be observing two metrics - Mean Squared Error and Coefficient of Determination 
+         We'll be observing two metrics - Mean Squared Error and Coefficient of Determination
          $
          R^2
          $
 
 
-         #### Mean Squared Error
+         # Mean Squared Error
 
          Calculates the mean squared errors of the predictions to true values.
 
          $$
-         MSE = \frac{1}{n} \sum_{i = 1}^{n} (Y_{true(i)} - Y_{pred(i)})^2 
+         MSE = \frac{1}{n} \sum_{i = 1}^{n} (Y_{true(i)} - Y_{pred(i)})^2
          $$
 
-         #### Coefficient of Determination 
+         # Coefficient of Determination
 
          Describes the variance with respect to the mean of the true values and variance in respect to our predictions.
 
@@ -181,10 +179,10 @@ def app():
 
          # Regularization
          st.markdown(r'''
-         ### Regularization
+         # Regularization
 
          Let's say our model is giving us fantastic results but we are afraid of overfitting.
-         We can penalize our loss function by adding a 
+         We can penalize our loss function by adding a
          $
          L_1
          $
@@ -192,13 +190,13 @@ def app():
          $
          L_1
          $
-         (Ridge) parameters. We multiply these parameters by 
+         (Ridge) parameters. We multiply these parameters by
          $
          \lambda
          $
          a scalar value, the optimal value is found by cross-validation methods.
 
-         #### Lasso
+         # Lasso
 
          $$
          \theta_j := \theta_j - \alpha (\frac{d}{d\theta_j}J(\theta) + \lambda |\theta_j|   )
@@ -214,11 +212,10 @@ def app():
          st.image(image, caption='Figure 3: Lasso diagram.',
                   use_column_width=False, width=600)
 
-
          # Ridge
          st.markdown(r'''
 
-         #### Ridge
+         # Ridge
 
          $$
          \theta = (X^TX + \lambda * I_{matrix}  )^{-1}X^Ty
@@ -240,14 +237,13 @@ def app():
          st.image(image, caption='Figure 4: Ridge diagram.',
                   use_column_width=False, width=600)
 
-
          # Split into two columns for Closed-formed solution and Gradient descent.
          col1, col2 = st.beta_columns(2)
 
          # Pros
          with col1:
-             st.markdown(''' 
-                 #### Closed-formed Solution
+             st.markdown('''
+                 # Closed-formed Solution
 
                  * Ease of implementation.
                  * Sufficient for smaller datasets.
@@ -256,8 +252,8 @@ def app():
 
          # Cons
          with col2:
-             st.markdown(''' 
-                 #### Gradient Descent
+             st.markdown('''
+                 # Gradient Descent
 
                  * Computational complexity - faster to find solutions in some cases.
 
@@ -268,41 +264,36 @@ def app():
 
          # Implementation code
          st.markdown('''
-                 ### Implementation
+                 # Implementation
 
          [Linear Regression](https://github.com/SulmanK/MLalgos/blob/main/Algos/model/linreg.py)
 
 
                  ''')
 
-
          # Insert parameters
          st.markdown('''
 
-             ### Comparing the distributions of the testing set to the predicted values. 
+             # Comparing the distributions of the testing set to the predicted values.
 
-             Use the sidebar widgets to adjust various parameters of the linear regression methods discussed. 
+             Use the sidebar widgets to adjust various parameters of the linear regression methods discussed.
              We'll be comparing sci-kit learns implementation to my own.
 
-             #### Histograms of various linear regression methods
+             # Histograms of various linear regression methods
 
              ''')
-
-
 
          st.sidebar.title('Parameters')
          col1, col2 = st.sidebar.beta_columns(2)
 
-
-        with col1:
-            st.markdown(''' 
-                #### Sci-kit Learn
+         with col1:
+            st.markdown('''
+                # Sci-kit Learn
 
                 ''')
 
             sk_regularization = st.radio(label='Regularization', key='Sci-kit_regularization',
                                          options=[None, 'L1 (Lasso)', 'L2 (Ridge)'])
-
 
             if sk_regularization != None:
 
@@ -316,8 +307,8 @@ def app():
                 min_value=0, max_value=3000,
                 value=1500, step=1)
 
-            st.markdown(''' 
-            #### Batch Gradient Descent (BGD)
+            st.markdown('''
+            # Batch Gradient Descent (BGD)
 
             ''')
 
@@ -339,8 +330,8 @@ def app():
                 min_value=0.0, max_value=10.0,
                 value=0.0, step=0.01)
 
-            st.markdown(''' 
-            #### Minibatch Gradient Descent (MBGD)
+            st.markdown('''
+            # Minibatch Gradient Descent (MBGD)
 
             ''')
 
@@ -367,17 +358,15 @@ def app():
                 min_value=0.0, max_value=10.0,
                 value=0.0, step=0.01)
 
-
         # Seond column
-        with col2:
-            st.markdown(''' 
-                #### Normal (Closed-form solution)
+         with col2:
+            st.markdown('''
+                # Normal (Closed-form solution)
 
                 ''')
 
             normal_regularization = st.radio(label='Regularization', key='normal_regularization',
                                              options=[None,  'L2 (Ridge)'])
-
 
                 if normal_regularization != None:
 
@@ -386,10 +375,8 @@ def app():
                     min_value=0.0, max_value=10.0,
                     value=0.0, step=0.01)
 
-
-
-            st.markdown(''' 
-                #### Stochastic Gradient Descent (SGD)
+            st.markdown('''
+                # Stochastic Gradient Descent (SGD)
 
                 ''')
 
@@ -405,7 +392,6 @@ def app():
                 'Penalty coefficient', key='sgd_lambda_',
                 min_value=0.0, max_value=10.0,
                 value=0.0, step=0.01)
-
 
         # Instantiate of variables
 
