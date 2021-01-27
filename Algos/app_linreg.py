@@ -297,15 +297,15 @@ def app():
 
         if sk_regularization != None:
 
-            sk_lambda_ = st.slider(
-                'Penalty coefficient', key='Sci-kit_lambda',
-                min_value=0.0, max_value=10.0,
-                value=0.0, step=0.01)
-
             sk_iterations = st.slider(
                 'Iterations', key='sk_iterations',
                 min_value=0, max_value=3000,
                 value=1500, step=1)
+
+            sk_lambda_ = st.slider(
+                'Penalty coefficient', key='Sci-kit_lambda',
+                min_value=0.0, max_value=10.0,
+                value=0.0, step=0.01)
 
         st.markdown('''
             # Batch Gradient Descent (BGD)
