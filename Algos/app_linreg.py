@@ -393,7 +393,6 @@ def app():
                 value=0.0, step=0.01)
 
         # Instantiate of variables
-
         st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
