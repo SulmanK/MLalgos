@@ -274,7 +274,7 @@ def app():
          st.markdown('''
                  ### Implementation
 
-         Attach github code link
+         [Linear Regression](https://github.com/SulmanK/MLalgos/blob/main/Algos/model/linreg.py)
 
 
                  ''')
