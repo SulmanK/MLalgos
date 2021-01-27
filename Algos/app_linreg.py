@@ -62,7 +62,8 @@ def app():
              $
              's are input features
 
-             Next, we'll need a method to measure our predictions, let's make h(x) close to y. Our loss function is
+             Next, we'll need a method to measure our predictions, let's make h(x) close to y. 
+             Our loss function is
              $$
              Loss = h_\theta(x) -y
              $$
