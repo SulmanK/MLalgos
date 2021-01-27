@@ -325,10 +325,11 @@ def app():
         bgd_regularization = st.radio(label='Regularization', key='BGD_regularization',
                                       options=[None, 'L1 (Lasso)', 'L2 (Ridge)'])
 
-        bgd_lambda_ = st.slider(
-            'Penalty coefficient', key='BGD_lambda',
-            min_value=0.0, max_value=10.0,
-            value=0.0, step=0.01)
+        if bgd_regularization != None:
+            bgd_lambda_ = st.slider(
+                'Penalty coefficient', key='BGD_lambda',
+                min_value=0.0, max_value=10.0,
+                value=0.0, step=0.01)
 
         st.markdown('''
             # Minibatch Gradient Descent (MBGD)
@@ -353,10 +354,11 @@ def app():
         mbgd_regularization = st.radio(label='Regularization', key='MBGD_regularization',
                                        options=[None, 'L1 (Lasso)', 'L2 (Ridge)'])
 
-        mbgd_lambda_ = st.slider(
-            'Penalty coefficient', key='MBGD_lambda',
-            min_value=0.0, max_value=10.0,
-            value=0.0, step=0.01)
+        if mbgd_regularization != None:
+            mbgd_lambda_ = st.slider(
+                'Penalty coefficient', key='MBGD_lambda',
+                min_value=0.0, max_value=10.0,
+                value=0.0, step=0.01)
 
     # Seond column
     with col2:
@@ -387,10 +389,11 @@ def app():
         sgd_regularization = st.radio(label='Regularization', key='SGD_reg',
                                       options=[None, 'L1 (Lasso)', 'L2 (Ridge)'])
 
-        sgd_lambda_ = st.slider(
-            'Penalty coefficient', key='sgd_lambda_',
-            min_value=0.0, max_value=10.0,
-            value=0.0, step=0.01)
+        if sgd_regularization != None:
+            sgd_lambda_ = st.slider(
+                'Penalty coefficient', key='sgd_lambda_',
+                min_value=0.0, max_value=10.0,
+                value=0.0, step=0.01)
 
     # Instantiate of variables
     st.set_option('deprecation.showPyplotGlobalUse', False)
