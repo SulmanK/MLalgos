@@ -30,7 +30,7 @@ def app():
          ''')
 
          # Image of Supervised learning
-         image = Image.open('assets/SL_diagram.png')
+         image = Image.open('SL_diagram.png')
          st.image(image, caption='Figure 1: Supervised learning diagram.',
                   use_column_width=False, width=600)
 
@@ -112,7 +112,7 @@ def app():
              ''')
 
          # Image of GD
-         image = Image.open('assets/GD_diagram.png')
+         image = Image.open('GD_diagram.png')
          st.image(image, caption='Figure 2: Gradient descent diagram.',
                   use_column_width=False, width=600)
 
@@ -212,7 +212,7 @@ def app():
          ''')
 
          # Image of Lasso
-         image = Image.open('assets/Lasso_diagram.png')
+         image = Image.open('Lasso_diagram.png')
          st.image(image, caption='Figure 3: Lasso diagram.',
                   use_column_width=False, width=600)
 
@@ -238,7 +238,7 @@ def app():
              ''')
 
          # Image of Ridge
-         image = Image.open('assets/Ridge_diagram.png')
+         image = Image.open('Ridge_diagram.png')
          st.image(image, caption='Figure 4: Ridge diagram.',
                   use_column_width=False, width=600)
 
