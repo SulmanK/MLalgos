@@ -14,31 +14,31 @@ import streamlit as st
 # ----------------- Layout
 def app():
 
-         # Title
-         st.title('Linear Regression')
+    # Title
+    st.title('Linear Regression')
 
-         # Supervised Learning
-         st.markdown(''' ### Supervised Learning
+    # Supervised Learning
+    st.markdown(''' ### Supervised Learning
          Firstly, we need to explain supervised learning before we move onto linear regression.
          Supervised learning involves using input features (x) to predict an output (y).
          Given a training set, we employ a learning algorithm to get our hypothesis function.
          Then, we feed our dataset to our hypothesis function to make predictions.  The process described is presented in Figure 1.
          ''')
 
-         # Image of Supervised learning
-         image = Image.open('SL_diagram.png')
-         st.image(image, caption='Figure 1: Supervised learning diagram.',
-                  use_column_width=False, width=600)
+    # Image of Supervised learning
+    image = Image.open('SL_diagram.png')
+    st.image(image, caption='Figure 1: Supervised learning diagram.',
+             use_column_width=False, width=600)
 
-         # Linear Regression
-         st.markdown('''
+    # Linear Regression
+    st.markdown('''
          In supervised learning, when the target variable is continuous, it is called regression, and when it is discrete, it is known as classification.
 
          # Linear Regression
          We need to represent the hypothesis function.
          '''
-                     )
-         st.markdown(r'''
+                )
+    st.markdown(r'''
              $$
              h_\theta(x) = \theta_0 + \theta_1x_1 + \theta_2x_2
              $$
@@ -107,13 +107,13 @@ def app():
 
              ''')
 
-         # Image of GD
-         image = Image.open('GD_diagram.png')
-         st.image(image, caption='Figure 2: Gradient descent diagram.',
-                  use_column_width=False, width=600)
+    # Image of GD
+    image = Image.open('GD_diagram.png')
+    st.image(image, caption='Figure 2: Gradient descent diagram.',
+             use_column_width=False, width=600)
 
-         # Linear Regression Cost Function / Gradient Descent
-         st.markdown(r'''
+    # Linear Regression Cost Function / Gradient Descent
+    st.markdown(r'''
 
          $$
          \theta_j := \theta_j - \alpha \frac{d}{d\theta_j}J(\theta)
@@ -147,8 +147,8 @@ def app():
 
          ''')
 
-         # Metrics
-         st.markdown(r'''
+    # Metrics
+    st.markdown(r'''
 
          # Metrics
 
@@ -177,8 +177,8 @@ def app():
 
              ''')
 
-         # Regularization
-         st.markdown(r'''
+    # Regularization
+    st.markdown(r'''
          # Regularization
 
          Let's say our model is giving us fantastic results but we are afraid of overfitting.
@@ -207,13 +207,13 @@ def app():
 
          ''')
 
-         # Image of Lasso
-         image = Image.open('Lasso_diagram.png')
-         st.image(image, caption='Figure 3: Lasso diagram.',
-                  use_column_width=False, width=600)
+    # Image of Lasso
+    image = Image.open('Lasso_diagram.png')
+    st.image(image, caption='Figure 3: Lasso diagram.',
+             use_column_width=False, width=600)
 
-         # Ridge
-         st.markdown(r'''
+    # Ridge
+    st.markdown(r'''
 
          # Ridge
 
@@ -232,17 +232,17 @@ def app():
 
              ''')
 
-         # Image of Ridge
-         image = Image.open('Ridge_diagram.png')
-         st.image(image, caption='Figure 4: Ridge diagram.',
-                  use_column_width=False, width=600)
+    # Image of Ridge
+    image = Image.open('Ridge_diagram.png')
+    st.image(image, caption='Figure 4: Ridge diagram.',
+             use_column_width=False, width=600)
 
-         # Split into two columns for Closed-formed solution and Gradient descent.
-         col1, col2 = st.beta_columns(2)
+    # Split into two columns for Closed-formed solution and Gradient descent.
+    col1, col2 = st.beta_columns(2)
 
-         # Pros
-         with col1:
-             st.markdown('''
+    # Pros
+    with col1:
+        st.markdown('''
                  # Closed-formed Solution
 
                  * Ease of implementation.
@@ -250,9 +250,9 @@ def app():
 
                  ''')
 
-         # Cons
-         with col2:
-             st.markdown('''
+    # Cons
+    with col2:
+        st.markdown('''
                  # Gradient Descent
 
                  * Computational complexity - faster to find solutions in some cases.
@@ -262,8 +262,8 @@ def app():
                      * Sparse data.
                  ''')
 
-         # Implementation code
-         st.markdown('''
+    # Implementation code
+    st.markdown('''
                  # Implementation
 
          [Linear Regression](https://github.com/SulmanK/MLalgos/blob/main/Algos/model/linreg.py)
@@ -271,8 +271,8 @@ def app():
 
                  ''')
 
-         # Insert parameters
-         st.markdown('''
+    # Insert parameters
+    st.markdown('''
 
              # Comparing the distributions of the testing set to the predicted values.
 
@@ -283,200 +283,199 @@ def app():
 
              ''')
 
-         st.sidebar.title('Parameters')
-         col1, col2 = st.sidebar.beta_columns(2)
+    st.sidebar.title('Parameters')
+    col1, col2 = st.sidebar.beta_columns(2)
 
-         with col1:
-            st.markdown('''
+    with col1:
+        st.markdown('''
                 # Sci-kit Learn
 
                 ''')
 
-            sk_regularization = st.radio(label='Regularization', key='Sci-kit_regularization',
-                                         options=[None, 'L1 (Lasso)', 'L2 (Ridge)'])
+        sk_regularization = st.radio(label='Regularization', key='Sci-kit_regularization',
+                                     options=[None, 'L1 (Lasso)', 'L2 (Ridge)'])
 
-            if sk_regularization != None:
+        if sk_regularization != None:
 
-                sk_lambda_ = st.slider(
-                    'Penalty coefficient', key='Sci-kit_lambda',
-                    min_value=0.0, max_value=10.0,
-                    value=0.0, step=0.01)
+            sk_lambda_ = st.slider(
+                'Penalty coefficient', key='Sci-kit_lambda',
+                min_value=0.0, max_value=10.0,
+                value=0.0, step=0.01)
 
-                sk_iterations = st.slider(
+            sk_iterations = st.slider(
                 'iterations', key='bgd_iterations',
                 min_value=0, max_value=3000,
                 value=1500, step=1)
 
-            st.markdown('''
+        st.markdown('''
             # Batch Gradient Descent (BGD)
 
             ''')
 
-            bgd_learning_rate = st.slider(
-                'Learning rate', key='bgd_LR',
-                min_value=0.0, max_value=1.0,
-                value=0.01, step=0.01)
+        bgd_learning_rate = st.slider(
+            'Learning rate', key='bgd_LR',
+            min_value=0.0, max_value=1.0,
+            value=0.01, step=0.01)
 
-            bgd_iterations = st.slider(
-                'iterations', key='bgd_iterations',
-                min_value=0, max_value=3000,
-                value=1500, step=1)
+        bgd_iterations = st.slider(
+            'iterations', key='bgd_iterations',
+            min_value=0, max_value=3000,
+            value=1500, step=1)
 
-            bgd_regularization = st.radio(label='Regularization', key='BGD_regularization',
-                                          options=[None, 'L1 (Lasso)', 'L2 (Ridge)'])
+        bgd_regularization = st.radio(label='Regularization', key='BGD_regularization',
+                                      options=[None, 'L1 (Lasso)', 'L2 (Ridge)'])
 
-            bgd_lambda_ = st.slider(
-                'Penalty coefficient', key='BGD_lambda',
-                min_value=0.0, max_value=10.0,
-                value=0.0, step=0.01)
+        bgd_lambda_ = st.slider(
+            'Penalty coefficient', key='BGD_lambda',
+            min_value=0.0, max_value=10.0,
+            value=0.0, step=0.01)
 
-            st.markdown('''
+        st.markdown('''
             # Minibatch Gradient Descent (MBGD)
 
             ''')
 
-            mbgd_learning_rate = st.slider(
-                'Learning rate', key='mbgd_LR',
-                min_value=0.0, max_value=1.0,
-                value=0.01, step=0.01)
+        mbgd_learning_rate = st.slider(
+            'Learning rate', key='mbgd_LR',
+            min_value=0.0, max_value=1.0,
+            value=0.01, step=0.01)
 
-            mbgd_iterations = st.slider(
-                'Iterations', key='mbgd_iterations',
-                min_value=0, max_value=3000,
-                value=1500, step=1)
+        mbgd_iterations = st.slider(
+            'Iterations', key='mbgd_iterations',
+            min_value=0, max_value=3000,
+            value=1500, step=1)
 
-            mbgd_batch_size = st.slider(
-                'Batch size', key='mbgd_batch_size',
-                min_value=0, max_value=len(X_train),
-                value=50, step=1)
+        mbgd_batch_size = st.slider(
+            'Batch size', key='mbgd_batch_size',
+            min_value=0, max_value=len(X_train),
+            value=50, step=1)
 
-            mbgd_regularization = st.radio(label='Regularization', key='MBGD_regularization',
-                                           options=[None, 'L1 (Lasso)', 'L2 (Ridge)'])
+        mbgd_regularization = st.radio(label='Regularization', key='MBGD_regularization',
+                                       options=[None, 'L1 (Lasso)', 'L2 (Ridge)'])
 
-            mbgd_lambda_ = st.slider(
-                'Penalty coefficient', key='MBGD_lambda',
-                min_value=0.0, max_value=10.0,
-                value=0.0, step=0.01)
+        mbgd_lambda_ = st.slider(
+            'Penalty coefficient', key='MBGD_lambda',
+            min_value=0.0, max_value=10.0,
+            value=0.0, step=0.01)
 
-        # Seond column
-         with col2:
-            st.markdown('''
+    # Seond column
+    with col2:
+        st.markdown('''
                 # Normal (Closed-form solution)
 
                 ''')
 
-            normal_regularization = st.radio(label='Regularization', key='normal_regularization',
-                                             options=[None,  'L2 (Ridge)'])
+        normal_regularization = st.radio(label='Regularization', key='normal_regularization',
+                                         options=[None,  'L2 (Ridge)'])
 
-            if normal_regularization != None:
-                normal_lambda_ = st.slider(
-                    'Penalty coefficient', key='Normal_lambda',
-                    min_value=0.0, max_value=10.0,
-                    value=0.0, step=0.01)
+        if normal_regularization != None:
+            normal_lambda_ = st.slider(
+                'Penalty coefficient', key='Normal_lambda',
+                min_value=0.0, max_value=10.0,
+                value=0.0, step=0.01)
 
-            st.markdown('''
+        st.markdown('''
                 # Stochastic Gradient Descent (SGD)
 
                 ''')
 
-            sgd_learning_rate = st.slider(
-                'Learning rate', key='sgd_LR',
-                min_value=0.0, max_value=1.0,
-                value=0.01, step=0.01)
+        sgd_learning_rate = st.slider(
+            'Learning rate', key='sgd_LR',
+            min_value=0.0, max_value=1.0,
+            value=0.01, step=0.01)
 
-            sgd_regularization = st.radio(label='Regularization', key='SGD_reg',
-                                          options=[None, 'L1 (Lasso)', 'L2 (Ridge)'])
+        sgd_regularization = st.radio(label='Regularization', key='SGD_reg',
+                                      options=[None, 'L1 (Lasso)', 'L2 (Ridge)'])
 
-            sgd_lambda_ = st.slider(
-                'Penalty coefficient', key='sgd_lambda_',
-                min_value=0.0, max_value=10.0,
-                value=0.0, step=0.01)
+        sgd_lambda_ = st.slider(
+            'Penalty coefficient', key='sgd_lambda_',
+            min_value=0.0, max_value=10.0,
+            value=0.0, step=0.01)
 
-        # Instantiate of variables
-        st.set_option('deprecation.showPyplotGlobalUse', False)
+    # Instantiate of variables
+    st.set_option('deprecation.showPyplotGlobalUse', False)
 
+    # Callback function used for populating comparison plots
 
-        # Callback function used for populating comparison plots
+    @st.cache(allow_output_mutation=True)
+    def comparison_plot_dist(X_train, X_test, y_train, y_test):
 
+        # Instantiate models
 
-        @st.cache(allow_output_mutation=True)
-        def comparison_plot_dist(X_train, X_test, y_train, y_test):
+        # Sci-kit learn models
+        if sk_regularization == None:
+            reg_sk = LinearRegression().fit(X_train, y_train)
+            y_pred_sk = reg_sk.predict(X_test)
+            mse_sk = mean_squared_error(y_test, y_pred_sk)
+            r2_sk = r2_score(y_test, y_pred_sk)
 
-            # Instantiate models
+        elif sk_regularization == 'L1 (Lasso)':
+            reg_sk = Lasso(alpha=sk_lambda_, max_iter=sk_iterations).fit(
+                X_train, y_train)
+            y_pred_sk = reg_sk.predict(X_test)
+            mse_sk = mean_squared_error(y_test, y_pred_sk)
+            r2_sk = r2_score(y_test, y_pred_sk)
 
-            # Sci-kit learn models
-            if sk_regularization == None:
-                reg_sk = LinearRegression().fit(X_train, y_train)
-                y_pred_sk = reg_sk.predict(X_test)
-                mse_sk = mean_squared_error(y_test, y_pred_sk)
-                r2_sk = r2_score(y_test, y_pred_sk)
+        elif sk_regularization == 'L2 (Ridge)':
+            reg_sk = Ridge(alpha=sk_lambda_, max_iter=sk_iterations).fit(
+                X_train, y_train)
+            y_pred_sk = reg_sk.predict(X_test)
+            mse_sk = mean_squared_error(y_test, y_pred_sk)
+            r2_sk = r2_score(y_test, y_pred_sk)
 
-            elif sk_regularization == 'L1 (Lasso)':
-                reg_sk = Lasso(alpha=sk_lambda_, max_iter = sk_iterations ).fit(X_train, y_train)
-                y_pred_sk = reg_sk.predict(X_test)
-                mse_sk = mean_squared_error(y_test, y_pred_sk)
-                r2_sk = r2_score(y_test, y_pred_sk)
+        # My models
+        # Normal
+        reg_normal = myLinearRegression(method='Normal', regularization=normal_regularization,
+                                        lambda_=normal_lambda_, learning_rate=None,
+                                        iterations=None, batch_size=None)
 
-            elif sk_regularization == 'L2 (Ridge)':
-                reg_sk = Ridge(alpha=sk_lambda_, max_iter = sk_iterations).fit(X_train, y_train)
-                y_pred_sk = reg_sk.predict(X_test)
-                mse_sk = mean_squared_error(y_test, y_pred_sk)
-                r2_sk = r2_score(y_test, y_pred_sk)
+        reg_normal.fit(X_train, y_train)
+        y_pred_normal = reg_normal.predict(X_test)
+        mse_normal = reg_normal.mse_score(y_test, y_pred_normal)
+        r2_normal = reg_normal.rsquared_score(y_test, y_pred_normal)
 
-            # My models
-            # Normal
-            reg_normal = myLinearRegression(method='Normal', regularization=normal_regularization,
-                                            lambda_=normal_lambda_, learning_rate=None,
-                                            iterations=None, batch_size=None)
+        # BGD
+        reg_bgd = myLinearRegression(method='BGD', regularization=bgd_regularization,
+                                     lambda_=bgd_lambda_, learning_rate=bgd_learning_rate,
+                                     iterations=bgd_iterations, batch_size=None)
 
-            reg_normal.fit(X_train, y_train)
-            y_pred_normal = reg_normal.predict(X_test)
-            mse_normal = reg_normal.mse_score(y_test, y_pred_normal)
-            r2_normal = reg_normal.rsquared_score(y_test, y_pred_normal)
+        reg_bgd.fit(X_train, y_train)
 
-            # BGD
-            reg_bgd = myLinearRegression(method='BGD', regularization=bgd_regularization,
-                                         lambda_=bgd_lambda_, learning_rate=bgd_learning_rate,
-                                         iterations=bgd_iterations, batch_size=None)
+        y_pred_bgd = reg_bgd.predict(X_test)
+        mse_bgd = reg_bgd.mse_score(y_test, y_pred_bgd)
+        r2_bgd = reg_bgd.rsquared_score(y_test, y_pred_bgd)
 
-            reg_bgd.fit(X_train, y_train)
+        # SGD
+        reg_sgd = myLinearRegression(method='SGD', regularization=sgd_regularization,
+                                     lambda_=sgd_lambda_, learning_rate=sgd_learning_rate,
+                                     iterations=None, batch_size=None)
 
-            y_pred_bgd = reg_bgd.predict(X_test)
-            mse_bgd = reg_bgd.mse_score(y_test, y_pred_bgd)
-            r2_bgd = reg_bgd.rsquared_score(y_test, y_pred_bgd)
+        reg_sgd.fit(X_train, y_train)
 
-            # SGD
-            reg_sgd = myLinearRegression(method='SGD', regularization=sgd_regularization,
-                                         lambda_=sgd_lambda_, learning_rate=sgd_learning_rate,
-                                         iterations=None, batch_size=None)
+        y_pred_sgd = reg_sgd.predict(X_test)
+        mse_sgd = reg_sgd.mse_score(y_test, y_pred_sgd)
+        r2_sgd = reg_sgd.rsquared_score(y_test, y_pred_sgd)
 
-            reg_sgd.fit(X_train, y_train)
+        # MBGD
+        reg_mbgd = myLinearRegression(method='MBGD', regularization=mbgd_regularization,
+                                      lambda_=mbgd_lambda_, learning_rate=mbgd_learning_rate,
+                                      iterations=mbgd_iterations, batch_size=mbgd_batch_size)
 
-            y_pred_sgd = reg_sgd.predict(X_test)
-            mse_sgd = reg_sgd.mse_score(y_test, y_pred_sgd)
-            r2_sgd = reg_sgd.rsquared_score(y_test, y_pred_sgd)
+        reg_mbgd.fit(X_train, y_train)
+        y_pred_mbgd = reg_mbgd.predict(X_test)
+        mse_mbgd = reg_mbgd.mse_score(y_test, y_pred_mbgd)
+        r2_mbgd = reg_mbgd.rsquared_score(y_test, y_pred_mbgd)
 
-            # MBGD
-            reg_mbgd = myLinearRegression(method='MBGD', regularization=mbgd_regularization,
-                                          lambda_=mbgd_lambda_, learning_rate=mbgd_learning_rate,
-                                          iterations=mbgd_iterations, batch_size=mbgd_batch_size)
+        # Create figure
+        fig = plot_pred_histogram(true_value=y_test,
+                                  plot_sk=y_pred_sk, plot_normal=y_pred_normal, plot_bgd=y_pred_bgd, plot_sgd=y_pred_sgd, plot_mbgd=y_pred_mbgd,
+                                  mse_sk=mse_sk, mse_normal=mse_normal, mse_bgd=mse_bgd, mse_sgd=mse_sgd, mse_mbgd=mse_mbgd,
+                                  rsq_sk=r2_sk, rsq_normal=r2_normal, rsq_bgd=r2_bgd, rsq_sgd=r2_sgd, rsq_mbgd=r2_mbgd)
 
-            reg_mbgd.fit(X_train, y_train)
-            y_pred_mbgd = reg_mbgd.predict(X_test)
-            mse_mbgd = reg_mbgd.mse_score(y_test, y_pred_mbgd)
-            r2_mbgd = reg_mbgd.rsquared_score(y_test, y_pred_mbgd)
+        return fig
 
-            # Create figure
-            fig = plot_pred_histogram(true_value=y_test,
-                                      plot_sk=y_pred_sk, plot_normal=y_pred_normal, plot_bgd=y_pred_bgd, plot_sgd=y_pred_sgd, plot_mbgd=y_pred_mbgd,
-                                      mse_sk=mse_sk, mse_normal=mse_normal, mse_bgd=mse_bgd, mse_sgd=mse_sgd, mse_mbgd=mse_mbgd,
-                                      rsq_sk=r2_sk, rsq_normal=r2_normal, rsq_bgd=r2_bgd, rsq_sgd=r2_sgd, rsq_mbgd=r2_mbgd)
+    # Display the plot
+    sl_plot = comparison_plot_dist(X_train=X_train, X_test=X_test,
+                                   y_train=y_train, y_test=y_test)
 
-            return fig
-
-
-        # Display the plot
-        sl_plot = comparison_plot_dist(X_train=X_train, X_test=X_test,
-                                       y_train=y_train, y_test=y_test)
-
-        st.pyplot(sl_plot)
+    st.pyplot(sl_plot)
