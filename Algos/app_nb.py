@@ -259,7 +259,8 @@ def app():
     # Implementation code
     st.markdown('''
             ### Implementation
-
+            
+            [Naive Bayes Classifier](https://github.com/SulmanK/MLalgos/blob/main/Algos/app_nb.py)
 
 
 
