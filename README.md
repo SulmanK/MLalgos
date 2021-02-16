@@ -6,4 +6,4 @@ My implementations of traditional ML algorithms using numpy. I have created simp
 
 
 ### Dashboard
-[Application](https://share.streamlit.io/sulmank/mlalgos/main/KNN/app.py)
+[Application](https://share.streamlit.io/sulmank/mlalgos/main/Algos/app.py)
