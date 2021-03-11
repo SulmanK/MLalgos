@@ -3,6 +3,7 @@ My implementations of traditional ML algorithms using numpy. I have created simp
 * K-Nearest Neighbors
 * Linear Regression
 * Naive Bayes Classifier
+* Support Vector Machines
 
 
 ### Dashboard
