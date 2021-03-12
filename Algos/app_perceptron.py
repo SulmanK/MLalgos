@@ -22,7 +22,7 @@ Then, we feed our dataset to our hypothesis function to make predictions.  The p
 	''')
 
 	# Image of Supervised learning
-	image = Image.open('assets/SL_diagram.png')
+	image = Image.open('SL_diagram.png')
 	st.image(image, caption='Figure 1: Supervised learning diagram.',
 	         use_column_width=False, width=600)
 
@@ -36,7 +36,7 @@ Then, we feed our dataset to our hypothesis function to make predictions.  The p
 
 	''')
 
-	image2 = Image.open('assets/hyperplane.png')
+	image2 = Image.open('hyperplane.png')
 	st.image(image2, caption='Figure 2: Hyperplane diagram.',
 	         use_column_width=False, width=600)
 
@@ -48,7 +48,7 @@ Then, we feed our dataset to our hypothesis function to make predictions.  The p
 
 	''')
 
-	image3 = Image.open('assets/hinge_loss.png')
+	image3 = Image.open('hinge_loss.png')
 	st.image(image3, caption='Figure 3: Hinge-loss function.',
 	         use_column_width=False, width=600)
 
@@ -167,7 +167,7 @@ Then, we feed our dataset to our hypothesis function to make predictions.  The p
 	# Implementation code
 	st.markdown('''
 	        ### Implementation
-
+		[Perceptron](https://github.com/SulmanK/MLalgos/blob/main/Algos/model/perceptron.py)
 
 	        ''')
 
