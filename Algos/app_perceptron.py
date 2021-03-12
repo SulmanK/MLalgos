@@ -167,7 +167,7 @@ Then, we feed our dataset to our hypothesis function to make predictions.  The p
 	# Implementation code
 	st.markdown('''
 	        ### Implementation
-		[Perceptron](https://github.com/SulmanK/MLalgos/blob/main/Algos/model/perceptron.py)
+	[Perceptron](https://github.com/SulmanK/MLalgos/blob/main/Algos/model/perceptron.py)
 
 	        ''')
 
