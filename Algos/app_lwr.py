@@ -119,7 +119,7 @@ def app():
     # Implementation code
     st.markdown('''
             ### Implementation
-
+            [Locally Weighted Regression](https://github.com/SulmanK/MLalgos/blob/main/Algos/model/lwr.py)
 
             ''')
 
