@@ -21,7 +21,7 @@ def app():
     ''')
 
     # Image of Supervised learning
-    image = Image.open('assets/SL_diagram.png')
+    image = Image.open('SL_diagram.png')
     st.image(image, caption='Figure 1: Supervised learning diagram.',
              use_column_width=False, width=600)
 
@@ -35,7 +35,7 @@ def app():
 
     ''')
 
-    image2 = Image.open('assets/lwr_diagram.png')
+    image2 = Image.open('lwr_diagram.png')
     st.image(image2, caption='Figure 2: Locally weighted regression diagram.',
              use_column_width=False, width=600)
 
