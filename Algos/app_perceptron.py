@@ -174,7 +174,7 @@ Then, we feed our dataset to our hypothesis function to make predictions.  The p
 
 	# Analysis
 	st.markdown('''
-	        ### Analysis
+	        ### Comparison of decision boundaries between my implementation vs sci-kit learn.
 
 
 
