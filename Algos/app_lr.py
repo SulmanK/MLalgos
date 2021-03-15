@@ -305,7 +305,7 @@ def app():
   # Implementation code
   st.markdown('''
           ### Implementation
-
+          [Logistic Regression](https://github.com/SulmanK/MLalgos/blob/main/Algos/model/lr.py)
 
           ''')
 
