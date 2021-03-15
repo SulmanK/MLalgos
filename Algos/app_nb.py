@@ -328,19 +328,19 @@ def app():
                 mine_gaussianNB = myNaiveBayes(method='Gaussian', alpha=None)
                 mine_gaussianNB.fit(X=X_train, y=y_train)
                 y_pred = mine_gaussianNB.predict(X=X_test)
-                mine_acc_score = accuracy_score(y_test, y_pred)
+                mine_acc_score = accuracy_score(y_test, y_pred) * 100
                 predict_prob = mine_gaussianNB.predict_proba
                 fig = scatterplot_matrix_db(X_train=X_train, y_train=y_train,
-                                            clf=mine_gaussianNB, title='Scatterplot Matrix with Decision Boundaries (Mine)(Accuracy = %f%%)' % (mine_acc_score))
+                                            clf=mine_gaussianNB, title='Scatterplot Matrix with Decision Boundaries (Mine)(Accuracy = %i%%)' % (mine_acc_score))
 
             elif clf == 'Sklearn':
                 sk_gaussianNB = GaussianNB()
                 sk_gaussianNB.fit(X=X_train, y=y_train)
                 y_pred = sk_gaussianNB.predict(X=X_test)
-                sk_acc_score = accuracy_score(y_test, y_pred)
+                sk_acc_score = accuracy_score(y_test, y_pred) *100
                 predict_prob = sk_gaussianNB.predict_proba(X=X_test)
                 fig = scatterplot_matrix_db(X_train=X_train, y_train=y_train,
-                                            clf=sk_gaussianNB, title='Scatterplot Matrix with Decision Boundaries (Sklearn)(Accuracy = %f%%)' % (sk_acc_score))
+                                            clf=sk_gaussianNB, title='Scatterplot Matrix with Decision Boundaries (Sklearn)(Accuracy = %i%%)' % (sk_acc_score))
 
             return fig, predict_prob
 
