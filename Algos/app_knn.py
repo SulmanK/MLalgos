@@ -163,7 +163,7 @@ def app():
 	# Insert parameters
 	st.markdown('''
 
-		#### Comparison Plot between Mine and Sci-kit
+		#### Comparison of decision boundaries between my implementation vs sci-kit learn.
 
 
 		''')
