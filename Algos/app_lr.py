@@ -26,7 +26,7 @@ def app():
   ''')
 
   # Image of Supervised learning
-  image = Image.open('assets/SL_diagram.png')
+  image = Image.open('SL_diagram.png')
   st.image(image, caption='Figure 1: Supervised learning diagram.',
            use_column_width=False, width=600)
 
@@ -40,7 +40,7 @@ def app():
 
   ''')
 
-  image2 = Image.open('assets/hyperplane.png')
+  image2 = Image.open('hyperplane.png')
   st.image(image2, caption='Figure 2: Hyperplane diagram.',
            use_column_width=False, width=600)
 
@@ -53,7 +53,7 @@ def app():
   ''')
 
 
-  image3 = Image.open('assets/sigmoid_loss.png')
+  image3 = Image.open('sigmoid_loss.png')
   st.image(image3, caption='Figure 3: Sigmoid plot.',
            use_column_width=False, width=600)
 
@@ -134,7 +134,7 @@ def app():
 
     ''')
   # Image of GD
-  image = Image.open('assets/GD_diagram.png')
+  image = Image.open('GD_diagram.png')
   st.image(image, caption='Figure 4: Gradient descent diagram.',
            use_column_width=False, width=600)
 
