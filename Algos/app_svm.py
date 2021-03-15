@@ -349,7 +349,7 @@ def app():
 
     # Analysis
     st.markdown('''
-            ### Analysis
+            ### Comparison of decision boundaries between my implementation vs sci-kit learn.
 
 
 
