@@ -5,6 +5,7 @@ My implementations of traditional ML algorithms using numpy. I have created simp
 * K-Nearest Neighbors
 * Naive Bayes Classifier
 * Perceptron
+* Logistic Regression
 * Support Vector Machines
 
 
