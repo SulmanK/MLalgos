@@ -7,7 +7,7 @@ from model.naivebayes import myNaiveBayes
 from PIL import Image
 from sklearn import preprocessing
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.metrics import log_loss
+from sklearn.metrics import log_loss, accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB, MultinomialNB
 import numpy as np
