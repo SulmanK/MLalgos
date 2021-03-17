@@ -5,6 +5,7 @@ import app_nb
 import app_svm
 import app_perceptron
 import app_lr
+import app_kmeans
 import streamlit as st
 PAGES = {
     "Linear Regression": app_linreg,
@@ -14,10 +15,12 @@ PAGES = {
     'Perceptron': app_perceptron,
 	'Logistic Regression': app_lr,
     'Support Vector Machines': app_svm,
+    'K-means Clustering': app_kmeans
     
 }
 st.sidebar.title('Navigation')
 selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 page = PAGES[selection]
 page.app()
+
 
