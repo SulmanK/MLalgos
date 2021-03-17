@@ -15,7 +15,7 @@ def app():
 
     # Supervised Learning
     st.markdown(''' ### Supervised Learning
-    Firstly, we need to explain supervised learning before we move onto Naive Bayes. 
+    Firstly, we need to explain supervised learning before we move onto Support Vector Machine. 
     Supervised learning involves using input features (x) to predict an output (y). 
     Given a training set, we employ a learning algorithm to get our hypothesis function. 
     Then, we feed our dataset to our hypothesis function to make predictions.  The process described is presented in Figure 1.
