@@ -6,6 +6,7 @@ import app_svm
 import app_perceptron
 import app_lr
 import app_kmeans
+import app_dt
 import streamlit as st
 PAGES = {
     "Linear Regression": app_linreg,
@@ -15,6 +16,7 @@ PAGES = {
     'Perceptron': app_perceptron,
 	'Logistic Regression': app_lr,
     'Support Vector Machines': app_svm,
+    'Decision Tree': app_dt,
     'K-means Clustering': app_kmeans
     
 }
