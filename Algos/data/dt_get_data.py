@@ -44,7 +44,7 @@ def get_data(method):
 		             'native-country', '>50K, <=50K']
 
 		# Read in dataframe from csv file using col_names list
-		df = pd.read_csv('data/adult.data', header=None, names = col_names)
+		df = pd.read_csv('adult.data', header=None, names = col_names)
 
 		# Drop education-num column (same as education but encoded)
 		df = df.drop(columns = ['education-num'])
@@ -67,7 +67,7 @@ def get_data(method):
 		             'CHMIN', 'CHMAX',
 		             'PRP', 'ERP']
 
-		df = pd.read_csv('data/machine.data', header=None, names = col_names)
+		df = pd.read_csv('machine.data', header=None, names = col_names)
 		
 		# Subset the X, y df's
 		X = df.iloc[:, 2:7]
