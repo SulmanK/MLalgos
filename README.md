@@ -7,6 +7,7 @@ My implementations of traditional ML algorithms using numpy. I have created simp
 * Perceptron
 * Logistic Regression
 * Support Vector Machines
+* Decision Tree
 * K-means Clustering
 
 
